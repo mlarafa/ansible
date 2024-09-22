@@ -1,0 +1,14 @@
+---
+- name: update web servers
+  hosts: webservers
+  remote_user: ubuntu
+
+  tasks: 
+  - name: Ensure nginx is in the last version
+    ansible.builtin.yum:
+      name: nginx
+      state: latest
+  - name: Ensure nginx is started
+    ansible.builtin.service:
+      name: nginx
+      state: started
