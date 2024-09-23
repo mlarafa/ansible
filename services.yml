@@ -4,11 +4,12 @@
   remote_user: ubuntu
 
   tasks: 
-  - name: Ensure nginx is in the last version
-    ansible.builtin.yum:
-      name: nginx
-      state: latest
   - name: Ensure nginx is started
     ansible.builtin.service:
       name: nginx
       state: started
+  - name: Ensure nopCommerce430 is started
+    ansible.builtin.service:
+      name: nopCommerce430
+      state: started
+
